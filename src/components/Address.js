@@ -35,19 +35,19 @@ const Address = () => {
   );
   const data = allMarkdownRemark.edges[0].node.frontmatter;
   return (
-    <p class='h-card'>
-      <span class='p-name'>{data.address.name}</span>
+    <p className='h-card ndri-address'>
+      <span className='p-name'>{data.address.name}</span>
       <br />
-      <span class='p-org'>{data.address.company}</span>
+      <span className='p-org'>{data.address.company}</span>
       <br />
-      <span class='p-street-address'>{data.address.street}</span>
+      <span className='p-street-address'>{data.address.street}</span>
       <br />
-      <span class='p-postal-code'>{data.address.postalcode}</span>{' '}
-      <span class='p-locality'>{data.address.location}</span>
+      <span className='p-postal-code'>{data.address.postalcode}</span>{' '}
+      <span className='p-locality'>{data.address.location}</span>
       <br />
-      <span class='p-tel'>{data.address.tel}</span>
+      <span className='p-tel'>{data.address.tel}</span>
       <br />
-      <a class='u-email' href={data.address.mail}>
+      <a className='u-email' href={data.address.mail}>
         {data.address.mail}
       </a>
       <br />

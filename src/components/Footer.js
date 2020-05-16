@@ -104,7 +104,7 @@ const Footer = () => {
               </section>
             </div>
             <div className='column is-4'>
-              <section className='has-text-left address'>
+              <section className='has-text-left ndri-footer-address'>
                 <Address />
               </section>
             </div>

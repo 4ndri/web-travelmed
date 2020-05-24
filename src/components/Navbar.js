@@ -34,10 +34,10 @@ const Navbar = class extends React.Component {
 
   render() {
     return (
-      <nav className='navbar is-transparent' role='navigation' aria-label='main-navigation'>
+      <nav className='navbar is-transparent ndri-topnav' role='navigation' aria-label='main-navigation'>
         <div className='container'>
           <div className='navbar-brand'>
-            <Link to='/' className='navbar-item' title='Logo'>
+            <Link to='/' className='navbar-item ndri-navbar-logo' title='Logo'>
               TravelMed
             </Link>
             {/* Hamburger menu */}
@@ -53,7 +53,7 @@ const Navbar = class extends React.Component {
           </div>
           <div id='navMenu' className={`navbar-menu ${this.state.navBarActiveClass}`}>
             <div className='navbar-start has-text-centered'>
-              <Link to='/info' className='navbar-item' title='Logo'>
+              <Link to='/info' className='navbar-item'>
                 Informationen
               </Link>
             </div>

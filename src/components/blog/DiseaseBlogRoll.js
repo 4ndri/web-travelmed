@@ -11,7 +11,7 @@ export default () => (
       query DiseaseRollQuery {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "post-blog" }, tags: {eq: "disease"} } }
+          filter: { frontmatter: { templateKey: { eq: "blog-post" }, tags: {eq: "disease"} } }
         ) {
           edges {
             node {

@@ -12,6 +12,7 @@ module.exports = {
       options: {
         postCssPlugins: [
           require("tailwindcss"),
+          require("autoprefixer"),
           require("./tailwind.config.js"), // Optional: Load custom Tailwind CSS configuration
         ],
       },

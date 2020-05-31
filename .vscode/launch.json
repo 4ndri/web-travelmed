@@ -8,7 +8,7 @@
       "type": "edge",
       "request": "launch",
       "name": "Edge mit \"localhost\" starten",
-      "userDataDir": "${workspaceFolder}\\.edge",
+      "userDataDir": "C:\\Users\\andri.capol\\.edge\\edge-debugger01",
       "url": "http://localhost:8000",
       "webRoot": "${workspaceFolder}"
     }

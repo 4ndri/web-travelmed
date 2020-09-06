@@ -1,4 +1,3 @@
-@import '~bulma/sass/utilities/initial-variables';
 @import './_ndri.colors';
 
 $sh: 0px 0px 1px #fff;
@@ -13,30 +12,29 @@ h3 {
   font-family: 'Poiret One';
 }
 
+.ndri-container {
+  width: 100%;
+  max-width: 900px;
+}
+
 .ndri-header {
   // position: fixed;
   background-position: top;
   background-repeat: no-repeat;
 }
 
-.ndri-title {
-  font-family: 'Poiret One';
-  font-size: 4em !important;
-  font-weight: 400 !important;
-  background: inherit;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: $primary-darker;
-  text-align: center;
+.ndri-header-img {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  background-size: auto 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.ndri-subtitle {
-  font-family: 'Poiret One';
-  font-size: 2rem !important;
-  font-weight: 400;
-  color: $primary;
-  text-align: center;
-}
 
 .ndri-footer-title {
   font-family: 'Poiret One';
@@ -62,22 +60,4 @@ h3 {
   margin-left: 2em;
   margin-top: 1em;
   padding: 0.5em 0.75em;
-}
-
-.ndri-navbar-logo {
-  font-size: 2rem;
-  font-family: 'Poiret One';
-  color: $primary !important;
-}
-
-.ndri-topnav {
-  .ndri-page-title {
-    text-align: center;
-    padding: 0 0 1em;
-  }
-  .navbar-item {
-    font-size: 1.5rem;
-    font-family: 'Poiret One';
-    color: $primary !important;
-  }
 }

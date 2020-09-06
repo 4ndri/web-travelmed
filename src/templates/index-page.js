@@ -5,6 +5,10 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Address from '../components/Address';
 
+import Container from '../components/content/Container';
+import Title from '../components/content/Title';
+import SubTitle from '../components/content/SubTitle';
+
 export const IndexPageTemplate = ({
   image,
   title,
@@ -17,7 +21,7 @@ export const IndexPageTemplate = ({
   return (
     <div>
       <header
-        className='full-width-image margin-top-0 ndri-header'
+        className='mt-0 ndri-header ndri-header-img'
         style={{
           backgroundImage: `url(${
             !!image.childImageSharp ? image.childImageSharp.fluid.src : image
@@ -39,15 +43,12 @@ export const IndexPageTemplate = ({
           }}
         ></div>
       </header>
-      <main>
+      <Container><main>
         <section className='section section--gradient'>
           <header className='container'>
-            <h1 className='has-text-weight-light is-size-3-mobile is-size-2-tablet is-size-1-widescreen ndri-title'>
-              {title}
-            </h1>
-            <h3 className='has-text-weight-light is-size-5-mobile is-size-5-tablet is-size-4-widescreen ndri-subtitle'>
-              {subheading}
-            </h3>
+            <Title>{title}</Title>
+            <SubTitle>{subheading}</SubTitle>
+            
           </header>
           <div className='container'>
             <div className='section'>
@@ -78,6 +79,7 @@ export const IndexPageTemplate = ({
           </div>
         </section>
       </main>
+      </Container>
     </div>
   );
 };

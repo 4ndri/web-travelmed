@@ -3,108 +3,55 @@ import { Link } from 'gatsby';
 import github from '../img/github-icon.svg';
 import logo from '../img/logo.svg';
 
+const NavItem = ({ to, label }) => {
+  return (
+    <div className='block m-0 lg:inline-block h-full'>
+    <Link
+      to={to}
+      className='flex items-center p-3 m-0 h-full text-primary-700 hover:shadow-inner'
+    >
+      {label}
+    </Link>
+    </div>
+  );
+};
+
+const Logo = () => {
+  return (
+    <div class='flex items-center flex-shrink-0 text-primary-700 mr-6'>
+      <Link to='/' className='font-title p-2 text-3xl sm:text-xl md:text-2xl lg:text-3xl' title='Logo'>
+        TravelMed
+      </Link>
+    </div>
+  );
+};
+
 const Navbar = () => {
-  const [active, setActive] = useState(false);
-  const [navBarActiveClass, setNavBarActiveClass] = useState('');
+  const [hidden, setHidden] = useState(true);
 
   const toggleHamburger = () => {
     // toggle the active boolean in the state
-    this.setState(
-      {
-        active: !this.state.active,
-      },
-      // after state has been updated,
-      () => {
-        // set the class in state for the navbar accordingly
-        this.state.active
-          ? this.setState({
-              navBarActiveClass: 'is-active',
-            })
-          : this.setState({
-              navBarActiveClass: '',
-            });
-      }
-    );
+    setHidden(!hidden);
   };
 
   return (
-    // <nav className='navbar is-transparent ndri-topnav' role='navigation' aria-label='main-navigation'>
-    //   <div className='container'>
-    //     <div className='navbar-brand'>
-    //       <Link to='/' className='navbar-item ndri-navbar-logo' title='Logo'>
-    //         TravelMed
-    //       </Link>
-    //       {/* Hamburger menu */}
-    //       <div
-    //         className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-    //         data-target='navMenu'
-    //         onClick={() => this.toggleHamburger()}
-    //       >
-    //         <span />
-    //         <span />
-    //         <span />
-    //       </div>
-    //     </div>
-    //     <div id='navMenu' className={`navbar-menu ${this.state.navBarActiveClass}`}>
-    //       <div className='navbar-start has-text-centered'>
-    //         <Link to='/info' className='navbar-item'>
-    //           Informationen
-    //         </Link>
-    //       </div>
-    //       <div className='navbar-end has-text-centered'></div>
-    //     </div>
-    //   </div>
-    // </nav>
-
-    <nav class='flex items-center justify-between flex-wrap bg-teal-500 p-6'>
-      <div class='flex items-center flex-shrink-0 text-white mr-6'>
-        <svg
-          class='fill-current h-8 w-8 mr-2'
-          width='54'
-          height='54'
-          viewBox='0 0 54 54'
-          xmlns='http://www.w3.org/2000/svg'
+    <nav class='flex items-stretch justify-between flex-wrap bg-white'>
+      <Logo />
+      <div class='flex items-center lg:hidden'>
+        <button
+          class='flex items-center px-3 py-2 mr-2 border rounded text-primary-700 border-primary-700 outline-none'
+          onClick={() => toggleHamburger()}
         >
-          <path d='M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z' />
-        </svg>
-        <span class='font-semibold text-xl tracking-tight'>Tailwind CSS</span>
-      </div>
-      <div class='block lg:hidden'>
-        <button class='flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white'>
-          <svg class='fill-current h-3 w-3' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'>
+          <svg class='fill-current h-4 w-4' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'>
             <title>Menu</title>
             <path d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z' />
           </svg>
         </button>
       </div>
-      <div class='w-full block flex-grow lg:flex lg:items-center lg:w-auto'>
-        <div class='text-sm lg:flex-grow'>
-          <a
-            href='#responsive-header'
-            class='block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4'
-          >
-            Docs
-          </a>
-          <a
-            href='#responsive-header'
-            class='block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4'
-          >
-            Examples
-          </a>
-          <a
-            href='#responsive-header'
-            class='block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white'
-          >
-            Blog
-          </a>
-        </div>
-        <div>
-          <a
-            href='#'
-            class='inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0'
-          >
-            Download
-          </a>
+      <div class={`w-full ${hidden?'hidden':'block'} items-stretch flex-grow lg:w-auto lg:flex`}>
+        <div className='text-lg lg:flex-grow items-stretch'>
+          <NavItem to='/info' label='Informationen' />
+          <NavItem to='/info/disease' label='Krankheiten' />
         </div>
       </div>
     </nav>

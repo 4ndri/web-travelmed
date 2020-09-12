@@ -35,7 +35,7 @@ const Address = () => {
   );
   const data = allMarkdownRemark.edges[0].node.frontmatter;
   return (
-    <p className='h-card ndri-address'>
+    <p className='h-card p-1'>
       <span className='p-name'>{data.address.name}</span>
       <br />
       <span className='p-org'>{data.address.company}</span>

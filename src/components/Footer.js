@@ -35,8 +35,8 @@ const Menu = ({ children }) => {
   return <div className='flex flex-col'>{children}</div>;
 };
 
-const FooterContainer = ({ children }) => {
-  return <div className='p-3'>{children}</div>;
+const FooterContainer = ({ className, children }) => {
+  return <div className={`p-3 flex-auto ${className}`}>{children}</div>;
 };
 
 const Footer = () => {
@@ -73,11 +73,12 @@ const Footer = () => {
             <Link to='/'>TravelMed</Link>
           </h1>
         </div>
-        <div className='flex flex-col md:flex-row'>
+        <div className='flex flex-col md:flex-row items-center'>
           <FooterContainer>
             <Menu>
               <NavItem to='/info' label='Informationen' />
               <NavItem to='/info/disease' label='Krankheiten' />
+              <NavItem to='/blog' label='News' />
               <NavItemLink
                 href='https://www.sanacare.ch/standort/luzern-loewencenter/'
                 label='sanacare'
@@ -92,73 +93,9 @@ const Footer = () => {
               />
             </Menu>
           </FooterContainer>
-          <FooterContainer>
-            <Menu></Menu>
+          <FooterContainer className="">
+          <Address />
           </FooterContainer>
-        </div>
-
-        <div className='content has-text-centered has-background-black has-text-white-ter'>
-          <div className='container has-background-black has-text-white-ter'>
-            <div className='columns'>
-              <div className='column is-4'>
-                <section className='menu'>
-                  <ul className='menu-list'>
-                    <li>
-                      <Link to='/' className='navbar-item'>
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className='navbar-item' to='/info'>
-                        Informationen
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className='navbar-item' to='/products'>
-                        Products
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        className='navbar-item'
-                        href='/admin/'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                      >
-                        Admin
-                      </a>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className='column is-4'>
-                <section>
-                  <ul className='menu-list'>
-                    <li>
-                      <Link className='navbar-item' to='/blog'>
-                        Latest Stories
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        className='navbar-item'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        href='https://www.sanacare.ch/standort/luzern-loewencenter/'
-                      >
-                        sanacare
-                      </a>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className='column is-4'>
-                <section className='has-text-left ndri-footer-address'>
-                  <Address />
-                </section>
-              </div>
-            </div>
-          </div>
         </div>
       </Container>
     </footer>

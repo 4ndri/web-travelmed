@@ -11,7 +11,7 @@ module.exports = {
       },
       fontFamily:{
         title: ['Poiret One','Helvetica', 'Arial', 'sans-serif']
-      }
+      },
     },
   },
   variants: {},

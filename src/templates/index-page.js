@@ -8,6 +8,9 @@ import Address from '../components/Address';
 import Container from '../components/content/Container';
 import Title from '../components/content/Title';
 import SubTitle from '../components/content/SubTitle';
+import PageDescription from '../components/content/PageDescription';
+import PageTitle from '../components/content/PageTitle';
+import PageSection from '../components/content/PageSection';
 
 export const IndexPageTemplate = ({
   image,
@@ -43,42 +46,30 @@ export const IndexPageTemplate = ({
           }}
         ></div>
       </header>
-      <Container><main>
-        <section className='section section--gradient'>
-          <header className='container'>
-            <Title>{title}</Title>
-            <SubTitle>{subheading}</SubTitle>
-            
-          </header>
-          <div className='container'>
-            <div className='section'>
-              <div className='columns'>
-                <div className='column is-10 is-offset-1'>
-                  <div className='content'>
-                    <section className='content'>
-                      <div className='tile'>
-                        <h1 className='tit'>{mainpitch.title}</h1>
-                      </div>
-                      <div className='tile'>
-                        <h3 className='subtitle'>{mainpitch.description}</h3>
-                      </div>
-                    </section>
-                    <section className='content'>
-                      <Address />
-                    </section>
-                    <section className='columns'>
-                      <div className='column is-12'>
-                        <h3 className='has-text-weight-semibold is-size-2'>{heading}</h3>
-                        <p>{description}</p>
-                      </div>
-                    </section>
-                  </div>
-                </div>
+      <Container>
+        <main>
+          <section className='section section--gradient'>
+            <header className='container'>
+              <Title>{title}</Title>
+              <SubTitle>{subheading}</SubTitle>
+            </header>
+            <PageSection className='border-t-2 border-primary-700'>
+              <PageTitle>{mainpitch.title}</PageTitle>
+              <PageDescription>
+                <h3 className='text-xl'>{mainpitch.description}</h3>
+              </PageDescription>
+            </PageSection>
+            <PageSection className='border-b-2 border-primary-700'>
+              <Address />
+            </PageSection>
+            <PageSection>
+              <div className='column is-12'>
+                <PageTitle>{heading}</PageTitle>
+                <PageDescription>{description}</PageDescription>
               </div>
-            </div>
-          </div>
-        </section>
-      </main>
+            </PageSection>
+          </section>
+        </main>
       </Container>
     </div>
   );

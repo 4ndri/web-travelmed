@@ -68,13 +68,13 @@ const Footer = () => {
   return (
     <footer className='bg-primary-900 text-white'>
       <Container>
-        <div className='my-3'>
+        <div className='py-3 border-b-2 border-white'>
           <h1 className='text-center text-white font-title text-2xl sm:text-3xl md:text-4xl'>
             <Link to='/'>TravelMed</Link>
           </h1>
         </div>
-        <div className='flex flex-col md:flex-row items-center'>
-          <FooterContainer>
+        <div className='flex flex-col md:flex-row items-center my-5'>
+          <FooterContainer className="border-r-2 border-white">
             <Menu>
               <NavItem to='/info' label='Informationen' />
               <NavItem to='/info/disease' label='Krankheiten' />

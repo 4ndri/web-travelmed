@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Container({ children }) {
+function Container({ className, children }) {
   return (
-    <div className="flex justify-center"><div className="ndri-container">{children}</div></div>
+    <div className="flex justify-center"><div className={`w-full max-w-4xl ${className}`}>{children}</div></div>
   );
 }
 

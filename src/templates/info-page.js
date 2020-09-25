@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import Address from '../components/Address';
 import Content, { HTMLContent } from '../components/Content';
 
 import DiseaseBlogRoll from '../components/blog/DiseaseBlogRoll';
+
+import Container from '../components/content/Container';
+import Title from '../components/content/Title';
+import PageTitle from '../components/content/PageTitle';
+import PageSection from '../components/content/PageSection';
 
 export const InfoPageTemplate = ({ content, contentComponent, image, title }) => {
   const PostContent = contentComponent || Content;
@@ -35,30 +39,15 @@ export const InfoPageTemplate = ({ content, contentComponent, image, title }) =>
           }}
         ></div>
       </header>
-      <main>
-        <section className='section section--gradient'>
-          <header className='container'>
-            <h1 className='has-text-weight-light is-size-3-mobile is-size-2-tablet is-size-1-widescreen ndri-title'>
-              {title}
-            </h1>
-          </header>
-          <div className='container'>
-            <div className='section'>
-              <div className='columns'>
-                <div className='column is-10 is-offset-1'>
-                  <div className='content'>
-                    <section className='columns'>
-                      <div className='column is-12'>
-                        <PostContent content={content} />
-                      </div>
-                    </section>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
+
+      <Container>
+        <main>
+          <PageSection>
+            <PageTitle>{title}</PageTitle>
+            <PostContent content={content} />
+          </PageSection>
+        </main>
+      </Container>
     </div>
   );
 };
@@ -81,26 +70,17 @@ const InfoPage = ({ data }) => {
         image={frontmatter.image}
         title={frontmatter.title}
       />
-      <section className='section'>
-        <header className='container '>
-          <h1 className='content has-text-weight-bold is-size-1 ndri-section-title'>Impfungen</h1>
-        </header>
-        <div className='container'>
-          <div className='content'>
-            <DiseaseBlogRoll />
-          </div>
-        </div>
-      </section>
-      <section className='section'>
-        <header className='container '>
-          <h1 className='content has-text-weight-bold is-size-1 ndri-section-title'>Krankheiten</h1>
-        </header>
-        <div className='container'>
-          <div className='content'>
-            <DiseaseBlogRoll />
-          </div>
-        </div>
-      </section>
+      <Container>
+        <PageSection className='border-t-2 border-primary-700'>
+          <PageTitle>Impfungen</PageTitle>
+          <DiseaseBlogRoll />
+        </PageSection>
+
+        <PageSection className='border-t-2 border-primary-700'>
+          <PageTitle>Krankheiten</PageTitle>
+          <DiseaseBlogRoll />
+        </PageSection>
+      </Container>
     </Layout>
   );
 };

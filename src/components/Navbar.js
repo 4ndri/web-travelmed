@@ -18,7 +18,7 @@ const NavItem = ({ to, label }) => {
 
 const Logo = () => {
   return (
-    <div class='flex items-center flex-shrink-0 text-primary-700 mr-6'>
+    <div className='flex items-center flex-shrink-0 text-primary-700 mr-6'>
       <Link to='/' className='font-title p-2 text-3xl sm:text-xl md:text-2xl lg:text-3xl' title='Logo'>
         TravelMed
       </Link>
@@ -35,20 +35,20 @@ const Navbar = () => {
   };
 
   return (
-    <nav class='flex items-stretch justify-between flex-wrap bg-white'>
+    <nav className='flex items-stretch justify-between flex-wrap bg-white'>
       <Logo />
-      <div class='flex items-center lg:hidden'>
+      <div className='flex items-center lg:hidden'>
         <button
-          class='flex items-center px-3 py-2 mr-2 border rounded text-primary-700 border-primary-700 outline-none'
+          className='flex items-center px-3 py-2 mr-2 border rounded text-primary-700 border-primary-700 outline-none'
           onClick={() => toggleHamburger()}
         >
-          <svg class='fill-current h-4 w-4' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'>
+          <svg className='fill-current h-4 w-4' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'>
             <title>Menu</title>
             <path d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z' />
           </svg>
         </button>
       </div>
-      <div class={`w-full ${hidden?'hidden':'block'} items-stretch flex-grow lg:w-auto lg:flex`}>
+      <div className={`w-full ${hidden?'hidden':'block'} items-stretch flex-grow lg:w-auto lg:flex`}>
         <div className='text-lg lg:flex-grow items-stretch'>
           <NavItem to='/info' label='Informationen' />
           <NavItem to='/info/disease' label='Krankheiten' />

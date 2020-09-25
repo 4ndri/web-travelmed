@@ -1,4 +1,5 @@
 @import './_ndri.colors';
+@import "tailwindcss/base";
 
 $sh: 0px 0px 1px #fff;
 
@@ -10,11 +11,6 @@ h1,
 h2,
 h3 {
   font-family: 'Poiret One';
-}
-
-.ndri-container {
-  width: 100%;
-  max-width: 900px;
 }
 
 .ndri-header {
@@ -35,29 +31,3 @@ h3 {
   align-items: center;
 }
 
-
-.ndri-footer-title {
-  font-family: 'Poiret One';
-  font-size: 4em !important;
-  font-weight: 400 !important;
-  background: inherit;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: $primary-invert;
-  text-align: center;
-}
-
-.ndri-address {
-  a {
-    color: $primary-lighter;
-    &:hover {
-      color: $primary-darker;
-    }
-  }
-}
-
-.ndri-footer-address {
-  margin-left: 2em;
-  margin-top: 1em;
-  padding: 0.5em 0.75em;
-}

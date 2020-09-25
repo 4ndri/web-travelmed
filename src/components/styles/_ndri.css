@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-title;
+  }
+  h1 {
+    @apply text-4xl mt-8;
+    @apply text-blue-700;
+  }
+  h2 {
+    @apply text-3xl mt-6;
+    @apply text-blue-700;
+  }
+  h3 {
+    @apply text-2xl mt-2;
+  }
+  h4 {
+    @apply text-xl;
+  }
+  h5 {
+    @apply text-xl;
+  }
+  h6 {
+    @apply text-lg;
+  }
+
+  .content h1,
+  .content h2 {
+    @apply border-t-2 border-blue-700;
+  }
+  .content h3 {
+    @apply border-t-2 border-gray-800;
+  }
+}
+
+.ndri-header {
+  /* position: fixed; */
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+.ndri-header-img {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  background-size: auto 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

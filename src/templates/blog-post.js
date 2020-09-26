@@ -36,12 +36,12 @@ export const BlogPostTemplate = ({
           </PageSection>
           <PageSection>
             {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className='taglist'>
+              <div className='mt-4 content'>
+                <h3>Tags</h3>
+                <ul className='list-none flex flex-wrap'>
                   {tags.map((tag) => (
                     <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                      <Link className='inline-block p-2 m-1 text-lg text-white bg-blue-800 rounded-full' to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
                     </li>
                   ))}
                 </ul>

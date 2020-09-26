@@ -7,7 +7,8 @@ description: Diphtherie ist eine Infektionskrankheit, die durch das Bakterium
 featuredpost: true
 featuredimage: /img/diphtherie.jpg
 tags:
-  - disease Diphterie
+  - disease
+  - Diphterie
 ---
 ### Erreger und Übertragung
 Diphtherie ist eine Infektionskrankheit, die durch das Bakterium Corynebacterium diphtheriae ausgelöst wird. Der Erreger befällt primär die oberen Atemwege und kann  ein Gift (Diphtherietoxin) produzieren, welches zu gefährlichen Komplikationen und Spätschäden führen kann. Die Übertragung von Mensch zu Mensch erfolgt über Tröpfcheninfektion (naher Körperkontakt, Husten, Niesen) ausgehend von einer erkrankten Person oder einer Person, die das Bakterium symptomlos in sich trägt. Seltener erfolgt die Ansteckung über verunreinigte Gegenstände.

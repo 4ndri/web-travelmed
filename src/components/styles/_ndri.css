@@ -14,24 +14,24 @@
     @apply font-title;
   }
   h1 {
-    @apply text-4xl mt-8;
+    @apply text-4xl mt-4 py-4;
     @apply text-blue-700;
   }
   h2 {
-    @apply text-3xl mt-6;
+    @apply text-3xl mt-4 py-4;
     @apply text-blue-700;
   }
   h3 {
-    @apply text-2xl mt-2;
+    @apply text-2xl mt-2 py-3;
   }
   h4 {
-    @apply text-xl;
+    @apply text-xl py-3;
   }
   h5 {
-    @apply text-xl;
+    @apply text-xl py-2;
   }
   h6 {
-    @apply text-lg;
+    @apply text-lg py-2;
   }
 
   .content h1,
@@ -43,18 +43,11 @@
   }
 }
 
-.ndri-header {
-  /* position: fixed; */
-  background-position: top;
-  background-repeat: no-repeat;
-}
-
 .ndri-header-img {
   width: 100%;
   height: 400px;
   background-size: cover;
   background-position: top;
-  background-attachment: fixed;
   background-size: auto 450px;
   display: flex;
   justify-content: center;

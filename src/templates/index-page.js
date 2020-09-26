@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
+import Header from '../components/Header';
 import Address from '../components/Address';
 
 import Container from '../components/content/Container';
@@ -23,29 +24,7 @@ export const IndexPageTemplate = ({
 }) => {
   return (
     <div>
-      <header
-        className='mt-0 ndri-header ndri-header-img'
-        style={{
-          backgroundImage: `url(${
-            !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-          })`,
-          backgroundPosition: `top!important`,
-          backgroundAttachment: 'fixed',
-          backgroundSize: 'auto 450px',
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            height: '150px',
-            lineHeight: '1',
-            justifyContent: 'space-around',
-            alignItems: 'left',
-            flexDirection: 'column',
-            background: 'inherit',
-          }}
-        ></div>
-      </header>
+      <Header image={image}></Header>
       <Container>
         <main>
           <section className='section section--gradient'>

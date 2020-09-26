@@ -6,8 +6,10 @@ import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 
 import DiseaseBlogRoll from '../components/blog/DiseaseBlogRoll';
+import VaccineBlogRoll from '../components/blog/VaccineBlogRoll';
 
 import Container from '../components/content/Container';
+import Header from '../components/Header';
 import Title from '../components/content/Title';
 import PageTitle from '../components/content/PageTitle';
 import PageSection from '../components/content/PageSection';
@@ -16,30 +18,7 @@ export const InfoPageTemplate = ({ content, contentComponent, image, title }) =>
   const PostContent = contentComponent || Content;
   return (
     <div>
-      <header
-        className='full-width-image margin-top-0 ndri-header'
-        style={{
-          backgroundImage: `url(${
-            !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-          })`,
-          backgroundPosition: `top!important`,
-          backgroundAttachment: 'fixed',
-          backgroundSize: 'auto 450px',
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            height: '150px',
-            lineHeight: '1',
-            justifyContent: 'space-around',
-            alignItems: 'left',
-            flexDirection: 'column',
-            background: 'inherit',
-          }}
-        ></div>
-      </header>
-
+      <Header height='300px' backgroundSize='450px' headerImg={image}></Header>
       <Container>
         <main>
           <PageSection>
@@ -70,13 +49,13 @@ const InfoPage = ({ data }) => {
         image={frontmatter.image}
         title={frontmatter.title}
       />
-      <Container>
-        <PageSection className='border-t-2 border-primary-700'>
+      <Container className='flex flex-col'>
+        <PageSection className='flex-auto border-t-2 border-primary-700'>
           <PageTitle>Impfungen</PageTitle>
-          <DiseaseBlogRoll />
+          <VaccineBlogRoll />
         </PageSection>
 
-        <PageSection className='border-t-2 border-primary-700'>
+        <PageSection className='flex-auto border-t-2 border-primary-700'>
           <PageTitle>Krankheiten</PageTitle>
           <DiseaseBlogRoll />
         </PageSection>

@@ -8,10 +8,10 @@ import BlogRoll from './BlogRoll';
 export default () => (
   <StaticQuery
     query={graphql`
-      query DiseaseBlogRollQuery {
+      query VaccineBlogRollQuery {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "blog-post" }, tags: {eq: "disease"} } }
+          filter: { frontmatter: { templateKey: { eq: "blog-post" }, tags: {eq: "vaccine"} } }
         ) {
           edges {
             node {

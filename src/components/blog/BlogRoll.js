@@ -8,18 +8,18 @@ function BlogRoll(props) {
   const { edges: posts } = data.allMarkdownRemark;
 
   return (
-    <div className='columns is-multiline'>
+    <div className='grid grid-flow-row grid-cols-3 gap-3'>
       {posts &&
         posts.map(({ node: post }) => (
-          <div className='is-parent column is-6' key={post.id}>
+          <div className='' key={post.id}>
             <article
-              className={`blog-list-item tile is-child box notification ${
+              className={`${
                 post.frontmatter.featuredpost ? 'is-featured' : ''
               }`}
             >
               <header>
                 {post.frontmatter.featuredimage ? (
-                  <div className='featured-thumbnail'>
+                  <div className='w-full'>
                     <PreviewCompatibleImage
                       imageInfo={{
                         image: post.frontmatter.featuredimage,
@@ -28,12 +28,11 @@ function BlogRoll(props) {
                     />
                   </div>
                 ) : null}
-                <p className='post-meta'>
-                  <Link className='title has-text-primary is-size-4' to={post.fields.slug}>
+                <p className='text-blue-700' >
+                  <Link className='text-xl' to={post.fields.slug}>
                     {post.frontmatter.title}
                   </Link>
-                  <span> &bull; </span>
-                  <span className='subtitle is-size-5 is-block'>{post.frontmatter.date}</span>
+                  <span className='text-xs block'>{post.frontmatter.date}</span>
                 </p>
               </header>
               <p>
@@ -41,7 +40,7 @@ function BlogRoll(props) {
                 <br />
                 <br />
                 <Link className='button' to={post.fields.slug}>
-                  Keep Reading →
+                  weiterlesen →
                 </Link>
               </p>
             </article>

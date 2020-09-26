@@ -85,12 +85,6 @@ const Footer = () => {
                 target='_blank'
                 rel='noopener noreferrer'
               />
-              <NavItemLink 
-              href='/admin'
-              label='Admin'
-              target='_blank'
-              rel='noopener noreferrer'
-              />
             </Menu>
           </FooterContainer>
           <FooterContainer className="">

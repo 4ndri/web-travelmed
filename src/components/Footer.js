@@ -78,6 +78,7 @@ const Footer = () => {
             <Menu>
               <NavItem to='/info' label='Informationen' />
               <NavItem to='/info/disease' label='Krankheiten' />
+              <NavItem to='/info/vaccine' label='Impfungen' />
               <NavItem to='/blog' label='News' />
               <NavItemLink
                 href='https://www.sanacare.ch/standort/luzern-loewencenter/'

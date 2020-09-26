@@ -52,6 +52,8 @@ const Navbar = () => {
         <div className='text-lg lg:flex-grow items-stretch'>
           <NavItem to='/info' label='Informationen' />
           <NavItem to='/info/disease' label='Krankheiten' />
+          <NavItem to='/info/vaccine' label='Impfungen' />
+          <NavItem to='/blog' label='News' />
         </div>
       </div>
     </nav>

@@ -5,6 +5,9 @@
 @tailwind utilities;
 
 @layer base {
+  p {
+    @apply text-base py-1 m-0;
+  }
   h1,
   h2,
   h3,
@@ -14,24 +17,28 @@
     @apply font-title;
   }
   h1 {
-    @apply text-4xl mt-4 py-4;
+    @apply text-4xl mt-4 py-3;
     @apply text-blue-700;
   }
   h2 {
-    @apply text-3xl mt-4 py-4;
+    @apply text-3xl mt-4 py-3;
     @apply text-blue-700;
   }
   h3 {
-    @apply text-2xl mt-2 py-3;
+    @apply text-2xl mt-2 py-2;
   }
   h4 {
-    @apply text-xl py-3;
+    @apply text-xl py-2;
   }
   h5 {
     @apply text-xl py-2;
   }
   h6 {
     @apply text-lg py-2;
+  }
+
+  ul{
+    @apply list-disc list-inside py-2;
   }
 
   .content h1,

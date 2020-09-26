@@ -6,7 +6,8 @@ featuredpost: false
 featuredimage: /img/Malaria.jpg
 description: Malaria ist eine durch einzellige Blutparasiten, sogenannte Plasmodien, verursachte fieberhafte Tropenkrankheit.
 tags:
-  - disease
+  - Krankheit
+  - Malaria
 ---
 
 ![Malaria](/img/Malaria.jpg)

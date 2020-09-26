@@ -6,12 +6,10 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 
-import DiseaseBlogRoll from '../components/blog/DiseaseBlogRoll';
-import VaccineBlogRoll from '../components/blog/VaccineBlogRoll';
+import BlogInfo from '../components/blog/BlogInfo';
 
 import Container from '../components/content/Container';
 import Header from '../components/Header';
-import Title from '../components/content/Title';
 import PageTitle from '../components/content/PageTitle';
 import PageSection from '../components/content/PageSection';
 
@@ -28,7 +26,7 @@ export const BlogPostTemplate = ({
 
   return (
     <div>
-      <Header height='300px' ></Header>
+      <Header height='300px'></Header>
       <Container>
         <main>
           {helmet || ''}
@@ -83,16 +81,7 @@ const BlogPost = ({ data }) => {
         title={post.frontmatter.title}
         featuredimage={post.frontmatter.featuredimage}
       />
-      <Container className='flex flex-col'>
-        <PageSection className='flex-auto border-t-2 border-primary-700'>
-          <PageTitle>Krankheiten</PageTitle>
-          <DiseaseBlogRoll />
-        </PageSection>
-        <PageSection className='flex-auto border-t-2 border-primary-700'>
-          <PageTitle>Impfungen</PageTitle>
-          <VaccineBlogRoll />
-        </PageSection>
-      </Container>
+      <BlogInfo />
     </Layout>
   );
 };

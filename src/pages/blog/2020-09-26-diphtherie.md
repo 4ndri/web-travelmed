@@ -7,7 +7,7 @@ description: Diphtherie ist eine Infektionskrankheit, die durch das Bakterium
 featuredpost: true
 featuredimage: /img/diphtherie.jpg
 tags:
-  - disease
+  - Krankheit
   - Diphterie
 ---
 ### Erreger und Übertragung

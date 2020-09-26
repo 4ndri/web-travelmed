@@ -6,7 +6,8 @@ featuredpost: false
 featuredimage: /img/hepatitis-a.jpg
 description: Hepatitis A ist eine infektiöse Leberentzündung, die durch das Hepatitis-A-Virus ausgelöst wird.
 tags:
-  - disease
+  - Krankheit
+  - Hepatitis
 ---
 
 ![Malaria](/img/hepatitis-a.jpg)

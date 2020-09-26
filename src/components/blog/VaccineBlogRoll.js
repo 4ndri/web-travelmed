@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 
 
-import BlogRoll from './BlogRoll';
+import ListItems from './ListItems';
 
 
 export default () => (
@@ -10,8 +10,8 @@ export default () => (
     query={graphql`
       query VaccineBlogRollQuery {
         allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "blog-post" }, tags: {eq: "vaccine"} } }
+          sort: { fields: [frontmatter___title] }
+          filter: { frontmatter: { templateKey: { eq: "blog-post" }, tags: {eq: "Impfung"} } }
         ) {
           edges {
             node {
@@ -38,6 +38,6 @@ export default () => (
         }
       }
     `}
-    render={(data, count) => <BlogRoll data={data} count={count} />}
+    render={(data, count) => <ListItems data={data} count={count} />}
   />
 )

@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
-import BlogRoll from './blog/BlogRoll';
+import BlogRoll from './BlogRoll';
 
-export default () => (
+export default ({ max = 9 }) => (
   <StaticQuery
     query={graphql`
       query BlogRollQuery {
@@ -35,6 +35,6 @@ export default () => (
         }
       }
     `}
-    render={(data, count) => <BlogRoll data={data} count={count} />}
+    render={(data, count) => <BlogRoll max={max || 9} data={data} count={count} />}
   />
 );

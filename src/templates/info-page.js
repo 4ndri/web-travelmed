@@ -5,8 +5,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 
-import DiseaseBlogRoll from '../components/blog/DiseaseBlogRoll';
-import VaccineBlogRoll from '../components/blog/VaccineBlogRoll';
+import BlogInfo from '../components/blog/BlogInfo';
 
 import Container from '../components/content/Container';
 import Header from '../components/Header';
@@ -49,17 +48,7 @@ const InfoPage = ({ data }) => {
         image={frontmatter.image}
         title={frontmatter.title}
       />
-      <Container className='flex flex-col'>
-        <PageSection className='flex-auto border-t-2 border-primary-700'>
-          <PageTitle>Impfungen</PageTitle>
-          <VaccineBlogRoll />
-        </PageSection>
-
-        <PageSection className='flex-auto border-t-2 border-primary-700'>
-          <PageTitle>Krankheiten</PageTitle>
-          <DiseaseBlogRoll />
-        </PageSection>
-      </Container>
+      <BlogInfo/>
     </Layout>
   );
 };

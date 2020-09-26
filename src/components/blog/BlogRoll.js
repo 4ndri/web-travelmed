@@ -1,22 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql, StaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
 import PreviewCompatibleImage from '../PreviewCompatibleImage';
 
 function BlogRoll(props) {
   const { data } = props;
   const { edges: posts } = data.allMarkdownRemark;
 
+  const displayPosts = (posts || []).slice(0, props.max || 6);
+
   return (
-    <div className='grid grid-flow-row grid-cols-3 gap-3'>
-      {posts &&
-        posts.map(({ node: post }) => (
+    <div className='grid grid-flow-row grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3 overflow-hidden'>
+      {displayPosts &&
+        displayPosts.length &&
+        displayPosts.map(({ node: post }) => (
           <div className='' key={post.id}>
-            <article
-              className={`${
-                post.frontmatter.featuredpost ? 'is-featured' : ''
-              }`}
-            >
+            <article className={`${post.frontmatter.featuredpost ? 'is-featured' : ''}`}>
               <header>
                 {post.frontmatter.featuredimage ? (
                   <div className='w-full'>
@@ -28,7 +27,7 @@ function BlogRoll(props) {
                     />
                   </div>
                 ) : null}
-                <p className='text-blue-700' >
+                <p className='text-blue-700'>
                   <Link className='text-xl' to={post.fields.slug}>
                     {post.frontmatter.title}
                   </Link>
